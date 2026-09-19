@@ -167,8 +167,8 @@ const translationsToEnglish = new Map([
   ['Instituto Federal do Rio Grande do Norte, IFRN', 'Federal Institute of Rio Grande do Norte, IFRN'],
   ['Juiz da Olimpíada Brasileira de Robótica', 'Judge at the Brazilian Robotics Olympiad'],
   ['Três edições em etapas regionais e estaduais', 'Three editions across regional and state stages'],
-  ['Medalha de bronze na OBMEP', 'OBMEP bronze medal'],
-  ['Participante dos programas PIC e PICME do IMPA', 'Participant in IMPA\'s PIC and PICME programs'],
+  ['Medalhista na Olimpíada Brasileira de Matemática', 'Medalist at the Brazilian Mathematics Olympiad'],
+  ['OBMEP, com participação nos programas PIC e PICME do IMPA', 'OBMEP, with participation in IMPA\'s PIC and PICME programs'],
   ['07 / FERRAMENTAS', '07 / TOOLKIT'],
   ['Um repertório amplo, sem perder o foco.', 'A broad toolkit without losing focus.'],
   ['Linguagens', 'Languages'],
@@ -190,7 +190,7 @@ const translationsToEnglish = new Map([
   ['Falar no WhatsApp', 'Message me on WhatsApp'],
   ['Construído com HTML, CSS e JavaScript. Hospedado no GitHub Pages.', 'Built with HTML, CSS, and JavaScript. Hosted on GitHub Pages.'],
   ['Voltar ao topo ↑', 'Back to top ↑'],
-  ['Résumé EN', 'Résumé PDF'],
+  ['Currículo PT', 'Résumé EN'],
 ]);
 
 const translatableTextNodes = [];
@@ -211,7 +211,7 @@ while (textWalker.nextNode()) {
 }
 
 const languageToggle = document.querySelector('[data-language-toggle]');
-const navResume = document.querySelector('.nav-cta');
+const resumeLinks = document.querySelectorAll('[data-resume-link]');
 const whatsappLinks = document.querySelectorAll('[data-whatsapp-link]');
 const languageFromQuery = new URLSearchParams(window.location.search).get('lang');
 const savedLanguage = window.localStorage.getItem('portfolio-language');
@@ -265,11 +265,11 @@ const applyLanguage = (language) => {
     languageToggle.setAttribute('aria-label', language === 'pt' ? 'Switch to English' : 'Mudar para português');
   }
 
-  if (navResume) {
-    navResume.href = language === 'pt'
+  resumeLinks.forEach((link) => {
+    link.href = language === 'pt'
       ? './assets/cv-thaua-magalhaes-pt.pdf'
       : './assets/resume-thaua-magalhaes-en.pdf';
-  }
+  });
 
   const whatsappMessage = language === 'pt'
     ? 'Olá, Thauã! Conheci seu trabalho pelo portfólio.'
