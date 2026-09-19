@@ -1518,16 +1518,9 @@ img {
   border-color: rgba(10, 13, 18, 0.35);
 }
 
-.contact-direct {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  margin-top: 42px;
-}
-
-.contact-email,
-.contact-phone {
+.contact-email {
   display: inline-block;
+  margin-top: 42px;
   border-bottom: 1px solid rgba(10, 13, 18, 0.32);
   font-family: var(--mono);
   font-size: 12px;
@@ -1931,14 +1924,7 @@ img {
     width: 100%;
   }
 
-  .contact-direct {
-    align-items: center;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .contact-email,
-  .contact-phone {
+  .contact-email {
     font-size: 10px;
   }
 
