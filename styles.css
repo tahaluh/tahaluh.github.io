@@ -294,6 +294,14 @@ img {
   font-style: normal;
 }
 
+.hero-product {
+  color: var(--lime);
+}
+
+.hero-engineering {
+  color: var(--orange);
+}
+
 .hero-lead {
   max-width: 690px;
   margin: 30px 0 0;
